@@ -2,6 +2,7 @@ import { capitalizeFirstLetter } from 'utils/capitalizeFirstLetter';
 import css from './FeedbackOptions.module.css';
 import { icons } from 'utils/icons';
 
+//  first variant (without attribte, onLeaveFeedback(feedbackName))
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   <div className={css.btnContainer}>
     {options.map(feedbackName => (
@@ -17,19 +18,19 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
   </div>
 );
 
-// export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-//   console.log(Object.keys(options));
-//   return (
-//     <div className={css.btnContainer}>
-//       <button className={css.button} onClick={() => onLeaveFeedback('good')}>
-//         Good
+// second variant(add attribte)
+// export const FeedbackOptions = ({ options, onLeaveFeedback }) => (
+//   <div className={css.btnContainer}>
+//     {options.map(feedbackName => (
+//       <button
+//         key={feedbackName}
+//         data-name={feedbackName}
+//         className={css.button}
+//         onClick={onLeaveFeedback}
+//       >
+//         {capitalizeFirstLetter(feedbackName)}
+//         <span>{icons[feedbackName]}</span>
 //       </button>
-//       <button className={css.button} onClick={() => onLeaveFeedback('neutral')}>
-//         Neutral
-//       </button>
-//       <button className={css.button} onClick={() => onLeaveFeedback('bad')}>
-//         Bad
-//       </button>
-//     </div>
-//   );
-// };
+//     ))}
+//   </div>
+// );

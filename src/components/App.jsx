@@ -16,17 +16,24 @@ export class App extends Component {
     return good + neutral + bad;
   };
 
-  countPositiveFeedbackPercentage = () => {
-    return this.countTotalFeedback()
+  countPositiveFeedbackPercentage = () =>
+    this.countTotalFeedback()
       ? Math.round((this.state.good * 100) / this.countTotalFeedback())
       : 0;
-  };
 
-  onLeaveFeedback = state => {
+  // first variant
+  onLeaveFeedback = state =>
     this.setState(prevState => {
       return { [state]: prevState[state] + 1 };
     });
-  };
+
+  //  second variant
+  // onLeaveFeedback = event => {
+  //   const feedbackName = event.currentTarget.dataset.name;
+  //   this.setState(prevState => {
+  //     return { [feedbackName]: prevState[feedbackName] + 1 };
+  //   });
+  // };
 
   render() {
     const { good, neutral, bad } = this.state;
