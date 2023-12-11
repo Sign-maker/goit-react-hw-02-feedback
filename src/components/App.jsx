@@ -22,9 +22,9 @@ export class App extends Component {
       : 0;
 
   // first variant
-  onLeaveFeedback = state =>
+  onLeaveFeedback = feedbackName =>
     this.setState(prevState => {
-      return { [state]: prevState[state] + 1 };
+      return { [feedbackName]: prevState[feedbackName] + 1 };
     });
 
   //  second variant
